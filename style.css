@@ -112,6 +112,7 @@ header {
 }
 
 .message {
+    font-size: 3rem;
     border: none;
     border-radius: 2.4rem;
     color: #0A3871;
@@ -155,18 +156,22 @@ header {
 }
 
 footer {
-    background: #33547e;
+    display: flex;
+    font-size: 1.4rem;
+    margin: 5rem 0 0 5rem;
+    text-align: center;
+    justify-content: center;
+}
 
-    width: 100%;
-    height: 4rem;
+footer p {
+    display: flex;
+    align-items: center;
+    text-align: center;
 
-    margin-top: 5rem;
-    padding: 1.5rem;
-    text-align: end;
+    margin-right: 0.8rem;
 }
 
 footer a {
-    font-size: 1.3rem;
     color: #D8DFE8;
     text-decoration: none;
 }
@@ -251,7 +256,7 @@ footer a {
         margin-left: 12rem;
     }
 
-    .btn-decrypt {    
+    .btn-decrypt {
         background-color: #D8DFE8;
         color: #0A3871;
     }
@@ -262,23 +267,18 @@ footer a {
         width: 34rem;
         
         margin: 12rem 2rem 2rem 24rem;
-
-        background-image: url("./assets/research.png");
-        background-repeat: no-repeat;
-        background-position: center;
-        justify-content: center;
     }
 
     .message::placeholder {    
-        padding-top: 40rem;
+        padding-top: 20rem;
     }
 
     .btn-copy {
-        display: none;
+        display: inline;
         position: absolute;
 
-        top: 56rem;
-        right: 8rem;
+        top: 54rem;
+        right: 14rem;
     }
 }
 
@@ -300,6 +300,16 @@ footer a {
 
     .message {
         width: 40rem;
+        height: 43.5rem;
         margin-left: 32rem;
+    }
+
+    .message::placeholder {    
+        padding-top: 10rem;
+    }
+
+    .btn-copy {
+        top: 44rem;
+        right: 37rem;
     }
 }

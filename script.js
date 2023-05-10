@@ -2,9 +2,9 @@ const text = document.querySelector(".text");
 const message = document.querySelector(".message");
 
 function btnEncrypt() {
-    const encryptedText = encrypt(text.value);
-    message.value = encryptedText;
-    text.value = "";
+  const encryptedText = encrypt(text.value);
+  message.value = encryptedText;
+  text.value = "";
 }
 
 function encrypt(encryptedString) {
@@ -19,24 +19,21 @@ function encrypt(encryptedString) {
   encryptedString = encryptedString.toLowerCase();
 
   for (let i = 0; i < matrixCode.length; i++) {
-
     if (encryptedString.includes(matrixCode[i][0])) {
       encryptedString = encryptedString.replaceAll(
         matrixCode[i][0],
         matrixCode[i][1]
       );
     }
-
   }
 
   return encryptedString;
 }
 
-
 function btnDecrypt() {
-    const decryptText = decrypt(text.value);
-    message.value = decryptText;
-    text.value = "";
+  const decryptText = decrypt(message.value);
+  text.value = decryptText;
+  message.value = "";
 }
 
 function decrypt(decryptString) {
@@ -51,15 +48,25 @@ function decrypt(decryptString) {
   decryptString = decryptString.toLowerCase();
 
   for (let i = 0; i < matrixCode.length; i++) {
-
     if (decryptString.includes(matrixCode[i][1])) {
       decryptString = decryptString.replaceAll(
         matrixCode[i][1],
         matrixCode[i][0]
       );
     }
-
   }
 
   return decryptString;
+}
+
+function copy() {
+  if (message.value !== "") {
+    message.select();
+    message.setSelectionRange(0, 99999);
+    navigator.clipboard.writeText(message.value);
+
+    alert(message.value + " foi copiado!");
+
+    message.value = "";
+  }
 }
